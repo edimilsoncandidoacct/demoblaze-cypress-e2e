@@ -1,5 +1,3 @@
-import { it } from "mocha"
-
 describe('template spec', () => {
 
   beforeEach(() => {
@@ -11,5 +9,9 @@ describe('template spec', () => {
 
   it('Validar Logo', () => {
     cy.validarLogo()
+  });
+
+  it('Validar Bunner', () => {
+    cy.validarBunner()
   });
 })
