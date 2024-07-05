@@ -1,0 +1,16 @@
+{
+  "lista_categories": {
+    "titulo": "CATEGORIES",
+    "phones": "Phones",
+    "laptops": "Laptops",
+    "monitors": "Monitors"
+  },
+  "product_name": {
+    "samsung": "Samsung galaxy s6",
+    "nokia": "Nokia lumia 1520"
+  }
+}
+
+
+
+
