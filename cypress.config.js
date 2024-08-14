@@ -9,4 +9,5 @@ module.exports = defineConfig({
 baseUrl: 'https://www.demoblaze.com/'
 
   },
+  modifyObstructiveCode: false            // esse comando não deixa o cypress executar automaticamente apos i save automatico do VS
 });

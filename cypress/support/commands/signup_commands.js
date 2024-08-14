@@ -11,3 +11,9 @@ Cypress.Commands.add('validarModalSignUp', (text) => {
 Cypress.Commands.add('validarInputUserName', (text) => {
     cy.get(ACESS_PAGE.INPUT_USERNAME).should('be.visible').type(text)
 })
+Cypress.Commands.add('validarInputPassword', (text) => {
+    cy.get(ACESS_PAGE.INPUT_PASSWORD).should('be.visible').type(text)
+})
+Cypress.Commands.add('validarClickbutton', () => {
+    cy.get(ACESS_PAGE.BTN_SIGNUP).should('be.visible').click()
+})
