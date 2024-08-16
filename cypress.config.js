@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const {faker} = require("@faker-js/faker");
 
 module.exports = defineConfig({
   e2e: {
@@ -9,5 +10,5 @@ module.exports = defineConfig({
 baseUrl: 'https://www.demoblaze.com/'
 
   },
-  modifyObstructiveCode: false            // esse comando não deixa o cypress executar automaticamente apos i save automatico do VS
+ "watchForFileChanges": false
 });
