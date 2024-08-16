@@ -1,5 +1,10 @@
 const validation_data_signup = require ('../fixtures/signup.json')
-const validation_data_userdata = require ('../fixtures/userdata.json')
+const { faker } = require("@faker-js/faker");
+
+const user = {
+    username: faker.internet.userName(),
+    password: faker.internet.password(),
+};
 describe('teste cadastro', () => {
     beforeEach(() => {
         cy.visit('/')
@@ -10,9 +15,9 @@ describe('teste cadastro', () => {
     it.only('Validar Modal Sign up', () => {
         cy.validarBotao(validation_data_signup.header.signup)
         cy.validarModalSignUp(validation_data_signup.header.signup) 
-        cy.validarInputUserName(validation_data_userdata.user.username)
-        cy.validarInputPassword(validation_data_userdata.user.password)
-        cy.validarClickbutton()
+        cy.validarInputUserName("Jacques_Kautzer")
+        cy.validarInputPassword(user.password)
+        cy.validarCriacaoUsuario()
     });
 
 
