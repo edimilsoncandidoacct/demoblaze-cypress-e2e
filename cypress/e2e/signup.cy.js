@@ -12,10 +12,10 @@ describe('teste cadastro', () => {
     it('Validar Botão Cadastro', () => {
         cy.validarBotao(validation_data_signup.header.signup) 
     });
-    it.only('Validar Modal Sign up', () => {
+    it('Validar Modal Sign up', () => {
         cy.validarBotao(validation_data_signup.header.signup)
         cy.validarModalSignUp(validation_data_signup.header.signup) 
-        cy.validarInputUserName("Jacques_Kautzer")
+        cy.validarInputUserName(user.username)
         cy.validarInputPassword(user.password)
         cy.validarCriacaoUsuario()
     });
