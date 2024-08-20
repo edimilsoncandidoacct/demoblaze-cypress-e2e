@@ -17,7 +17,7 @@ describe('teste cadastro', () => {
         cy.validarModalSignUp(validation_data_signup.header.signup) 
         cy.validarInputUserName(user.username)
         cy.validarInputPassword(user.password)
-        cy.validarCriacaoUsuario()
+        cy.validarSignup()
     });
 
 
