@@ -52,8 +52,26 @@ Cypress.Commands.add('validarSignup', () => {
         cy.wrap(createdUsername).as('createdUsername');
     });
 });
-
-
+    Cypress.Commands.add('validarSignupExistente', (text) => {
+        // Intercepta a requisição POST para a API de signup
+        cy.intercept('POST', '**/signup').as('signupRequest');
+    
+        // Clica no botão de signup
+        cy.get(ACESS_PAGE.BTN_SIGNUP)
+            .should('be.visible')
+            .should('have.text', 'Sign up')
+            .click();
+    
+        // Espera a requisição e verifica o status da resposta e a mensagem de erro
+        cy.wait('@signupRequest').then((interception) => {
+            // Verifica se a resposta da API foi OK (200)
+            expect(interception.response.statusCode).to.equal(200);
+            
+            // Se houver uma mensagem de erro, falha o teste
+            expect(interception.response.body.errorMessage).to.not.be.empty;
+            expect(interception.response.body.errorMessage).to.equal(text);
+        });
+    });
 
 
 
