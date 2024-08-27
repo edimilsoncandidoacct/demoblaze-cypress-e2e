@@ -1,0 +1,9 @@
+{
+   "signup":{
+    "title": "Sign up"
+   },
+   "login":{
+      "title": "Log in"
+   }
+
+}
