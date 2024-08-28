@@ -14,4 +14,11 @@ describe('teste login', () => {
         cy.validarBotaoLogin(validation_data_header.login.title) 
     });
 
+    it('Validar Modal Login', () => {
+        cy.validarBotaoLogin(validation_data_header.login.title)
+        cy.validarModalSignUp(validation_data_header.login.title) 
+        // cy.validarInputUserName(user.username)
+        // cy.validarInputPassword(user.password)
+        // cy.validarSignup()
+    });
 } ) 

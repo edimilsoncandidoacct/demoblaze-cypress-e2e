@@ -5,8 +5,8 @@ export const ACESS_PAGE  = {
     BTN_SIGNUP: '#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary',
     
 LOGIN:{ 
-    BTN_LOGIN: '#login2'
-    
+    BTN_LOGIN: '#login2',
+    HEADER_MODAL: '#logInModalLabel'    
 }
  
 
