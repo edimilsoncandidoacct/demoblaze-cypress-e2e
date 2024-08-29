@@ -1,7 +1,7 @@
 export const HEADER_PAGE  = {
-    BTN_SIGNUP: '#signin2',
-    H5_SIGNUP: '#signInModalLabel'
-    
-    
+    SIG_UP:{
+        BTN_SIGNUP: '#signin2',
+        H5_SIGNUP: '#signInModalLabel'
+    }
     
 }
