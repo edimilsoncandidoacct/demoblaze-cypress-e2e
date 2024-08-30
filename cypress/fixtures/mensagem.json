@@ -1,5 +1,8 @@
 {
    "alert":{
     "user_existente": "This user already exist."
+   },
+   "sucess":{
+      "welcome": "Welcome"
    }
 }
