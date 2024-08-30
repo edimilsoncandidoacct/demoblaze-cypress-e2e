@@ -16,7 +16,7 @@ describe('teste login', () => {
 
     it('Validar Modal Login', () => {
         cy.validarBotaoLogin(validation_data_header.login.title)
-        //cy.validarModalSignUp(validation_data_header.login.title) 
+        cy.validarHeaderModalLogin(validation_data_header.login.title) 
         // cy.validarInputUserName(user.username)
         // cy.validarInputPassword(user.password)
         // cy.validarSignup()
