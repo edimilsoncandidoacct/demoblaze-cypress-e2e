@@ -6,7 +6,11 @@ export const ACESS_PAGE  = {
     
 LOGIN:{ 
     BTN_LOGIN: '#login2',
-    HEADER_MODAL: '#logInModalLabel'    
+    HEADER_MODAL: '#logInModalLabel', 
+    INPUT_USERNAME: '#loginusername',
+    INPUT_PASSWORD: '#loginpassword',
+    BTN_MODAL_LOGIN: '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
+
 }
  
 
