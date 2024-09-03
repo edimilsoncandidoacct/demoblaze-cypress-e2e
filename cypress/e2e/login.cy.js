@@ -19,7 +19,7 @@ describe('teste login', () => {
     it.only('Validar Modal Login', () => {
         cy.validarBotaoLogin(validation_data_header.login.title)
         cy.validarHeaderModalLogin(validation_data_header.login.title) 
-        cy.validarLoginSucess('edicandido', '123456', validation_data_mensagem.sucess.welcome + validation_data_user.user.username)
+        cy.validarLoginSucess(validation_data_user.user.username, validation_data_user.user.password, validation_data_mensagem.sucess.welcome + validation_data_user.user.username)
         // cy.validarInputUserName(user.username)
         // cy.validarInputPassword(user.password)
         // cy.validarSignup()
