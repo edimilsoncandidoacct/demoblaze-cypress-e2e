@@ -4,7 +4,7 @@ export const HEADER_PAGE  = {
         H5_SIGNUP: '#signInModalLabel'
     },
     LOGIN:{
-        MSG_SUCESS: '.nameofuser'
+        MSG_SUCESS: '#nameofuser'
     }
 
     
