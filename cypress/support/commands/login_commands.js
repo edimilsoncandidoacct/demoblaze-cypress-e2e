@@ -1,18 +1,22 @@
-const { ACESS_PAGE } = require('../page_elements/acess_page')
-const { HEADER_PAGE } = require('../page_elements/header_page')
-
+const { ACESS_PAGE } = require('../page_elements/acess_page');
+const { HEADER_PAGE } = require('../page_elements/header_page');
 
 Cypress.Commands.add('validarBotaoLogin', (text) => {
-    cy.get(ACESS_PAGE.LOGIN.BTN_LOGIN).should('be.visible').should('contain.text', text).click()
-})
+  cy.get(ACESS_PAGE.LOGIN.BTN_LOGIN)
+    .should('be.visible')
+    .should('contain.text', text)
+    .click();
+});
 Cypress.Commands.add('validarHeaderModalLogin', (text) => {
-    cy.get(ACESS_PAGE.LOGIN.HEADER_MODAL).should('be.visible').should('contain.text', text)
-})
+  cy.get(ACESS_PAGE.LOGIN.HEADER_MODAL)
+    .should('be.visible')
+    .should('contain.text', text);
+});
 Cypress.Commands.add('validarLoginSucess', (user, text, pass) => {
-    cy.get(ACESS_PAGE.LOGIN.INPUT_USERNAME).should('be.visible').type(user)
-    cy.get(ACESS_PAGE.LOGIN.INPUT_PASSWORD).should('be.visible').type(pass)
-    cy.get(ACESS_PAGE.LOGIN.BTN_MODAL_LOGIN).should('be.visible').clik()
-    cy.get(HEADER_PAGE.LOGIN.MSG_SUCESS).should('be.visible').should('contain.text', text)
-})
-
-
+  cy.get(ACESS_PAGE.LOGIN.INPUT_USERNAME).should('be.visible').type(user);
+  cy.get(ACESS_PAGE.LOGIN.INPUT_PASSWORD).should('be.visible').type(pass);
+  cy.get(ACESS_PAGE.LOGIN.BTN_MODAL_LOGIN).should('be.visible').clik();
+  cy.get(HEADER_PAGE.LOGIN.MSG_SUCESS)
+    .should('be.visible')
+    .should('contain.text', text);
+});
