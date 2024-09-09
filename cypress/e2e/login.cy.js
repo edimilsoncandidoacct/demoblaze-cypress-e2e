@@ -16,15 +16,26 @@ describe('teste login', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
   });
 
-  it.only('Validar Modal Login', () => {
+  it('Validar Modal Login', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
     cy.validarHeaderModalLogin(validation_data_header.login.title);
-    cy.validarLoginSucess(
+    cy.validarLogin(
       validation_data_user.user.username,
-      validation_data_user.user.password,
+      validation_data_user.user.password
+    );
+    cy.ValidarMensagem(
       validation_data_mensagem.sucess.welcome +
         ' ' +
         validation_data_user.user.username
     );
+  });
+  it.only('validar Username Incorreto', () => {
+    cy.validarBotaoLogin(validation_data_header.login.title);
+    cy.validarHeaderModalLogin(validation_data_header.login.title);
+    cy.validarLogin(
+      validation_data_user.user.username_invalido,
+      validation_data_user.user.password
+    );
+    cy.validarUsernameIncorreto(validation_data_mensagem.alert.user_incorreto);
   });
 });

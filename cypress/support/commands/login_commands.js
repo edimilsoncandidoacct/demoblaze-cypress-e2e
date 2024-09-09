@@ -12,7 +12,7 @@ Cypress.Commands.add('validarHeaderModalLogin', (text) => {
     .should('be.visible')
     .should('contain.text', text);
 });
-Cypress.Commands.add('validarLoginSucess', (user, pass, text) => {
+Cypress.Commands.add('validarLogin', (user, pass) => {
   cy.get(ACESS_PAGE.LOGIN.INPUT_USERNAME)
     .should('be.visible')
     .click() // Clica no campo para garantir o foco
@@ -20,7 +20,28 @@ Cypress.Commands.add('validarLoginSucess', (user, pass, text) => {
     .type(user, { delay: 100 });
   cy.get(ACESS_PAGE.LOGIN.INPUT_PASSWORD).should('be.visible').type(pass);
   cy.get(ACESS_PAGE.LOGIN.BTN_MODAL_LOGIN).should('be.visible').click();
+});
+
+Cypress.Commands.add('validarMensagem', (text) => {
   cy.get(HEADER_PAGE.LOGIN.MSG_SUCESS)
     .should('be.visible')
     .should('contain.text', text);
+});
+
+Cypress.Commands.add('validarUsernameIncorreto', (text) => {
+  // Intercepta a requisição POST para a API de login
+  cy.intercept('POST', '**/login').as('loginRequest');
+
+  // Espera a requisição e verifica o status da resposta e a mensagem de erro
+  cy.wait('@loginRequest').then((interception) => {
+    // Verifica se a resposta da API foi OK (200)
+    expect(interception.response.statusCode).to.equal(200);
+
+    // Verifica se a resposta contém uma mensagem de erro
+    if (interception.response.body.errorMessage) {
+      // Se houver uma mensagem de erro, falha o teste
+      expect(interception.response.body.errorMessage).to.not.be.empty;
+      expect(interception.response.body.errorMessage).to.equal(text);
+    }
+  });
 });
