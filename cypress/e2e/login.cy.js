@@ -29,7 +29,7 @@ describe('teste login', () => {
         validation_data_user.user.username
     );
   });
-  it.only('validar Username Incorreto', () => {
+  it('validar Username Incorreto', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
     cy.validarHeaderModalLogin(validation_data_header.login.title);
     cy.validarLogin(
