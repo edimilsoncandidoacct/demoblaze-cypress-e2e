@@ -16,7 +16,7 @@ describe('teste login', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
   });
 
-  it('Validar Modal Login', () => {
+  it.only('Validar Modal Login', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
     cy.validarHeaderModalLogin(validation_data_header.login.title);
     cy.validarLogin(
@@ -32,22 +32,14 @@ describe('teste login', () => {
   it('validar Username Incorreto', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
     cy.validarHeaderModalLogin(validation_data_header.login.title);
-    cy.validarLogin(
-      validation_data_user.user.username_invalido,
-      validation_data_user.user.password
-    );
-    cy.validarUsernameIncorreto(validation_data_mensagem.alert.user_incorreto);
+    cy.validarLogin(user.username, validation_data_user.user.password);
+    cy.validarAlert(validation_data_mensagem.alert.user_incorreto);
   });
 
-  it.only('validar Senha Incorreto', () => {
+  it('validar Senha Incorreto', () => {
     cy.validarBotaoLogin(validation_data_header.login.title);
     cy.validarHeaderModalLogin(validation_data_header.login.title);
-    cy.validarLogin(
-      validation_data_user.user.username,
-      validation_data_user.user.password_invalido
-    );
-    cy.on('window:alert', (txt) => {
-      expect(txt).to.contains('Wrong password.');
-    });
+    cy.validarLogin(validation_data_user.user.username, user.password);
+    cy.validarAlert(validation_data_mensagem.alert.password_incorreto);
   });
 });
