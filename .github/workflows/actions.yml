@@ -1,0 +1,29 @@
+name: Run Cypress Tests
+ 
+on:
+  push:
+    branches:
+      - feature/edimilson
+  pull_request:
+    branches:
+      - main
+ 
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+ 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Defina a versão do Node.js de acordo com seu projeto
+ 
+      - name: Install dependencies
+        run: npm install
+ 
+      - name: Run Cypress tests
+        run: npm run cy:run # Ajuste este comando de acordo com o script que você usa para rodar os testes
+ 
