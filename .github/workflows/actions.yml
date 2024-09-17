@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-       - name: Create cypress.env.json
+      - name: Create cypress.env.json
         run: |
           echo '{ "user": { "username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}" } }' > cypress.env.json
 
