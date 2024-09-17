@@ -23,7 +23,11 @@ jobs:
  
       - name: Install dependencies
         run: npm install
- 
+
+      - name: Create cypress.env.json
+        run: |
+          echo '{ "user": { "username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}" } }' > cypress.env.json
+
       - name: Run Cypress tests
         run: npm run cy:run # Ajuste este comando de acordo com o script que você usa para rodar os testes
  
