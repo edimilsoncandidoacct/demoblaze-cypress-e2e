@@ -1,5 +1,5 @@
 const validation_data_header = require('../fixtures/header.json');
-const validation_data_user = require('../fixtures/userdata.json');
+const env_data_user = require('../../cypress.env.json');
 const validation_data_alert = require('../fixtures/mensagem.json');
 const { faker } = require('@faker-js/faker');
 
@@ -24,7 +24,7 @@ describe('teste cadastro', () => {
   it('Validar Modal Sign up Usuario Existente', () => {
     cy.validarBotao(validation_data_header.signup.title);
     cy.validarModalSignUp(validation_data_header.signup.title);
-    cy.validarInputUserName(validation_data_user.user.username);
+    cy.validarInputUserName(env_data_user.user.username);
     cy.validarInputPassword(user.password);
     cy.validarSignupExistente(validation_data_alert.alert.user_existente);
   });

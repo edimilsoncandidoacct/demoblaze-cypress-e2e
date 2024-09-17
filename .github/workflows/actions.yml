@@ -25,5 +25,8 @@ jobs:
         run: npm install
  
       - name: Run Cypress tests
+        env:
+          CYPRESS_user_username: ${{ secrets.USERNAME }}
+          CYPRESS_user_password: ${{ secrets.PASSWORD }}
         run: npm run cy:run # Ajuste este comando de acordo com o script que você usa para rodar os testes
  
