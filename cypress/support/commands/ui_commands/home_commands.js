@@ -1,4 +1,4 @@
-const HOME_PAGE = require('../page_elements/home_page').HOME_PAGE;
+const HOME_PAGE = require('../../page_elements/home_page').HOME_PAGE;
 
 Cypress.Commands.add('validarPagina', (url) => {
   cy.url().should('eq', url);
