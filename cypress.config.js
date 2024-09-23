@@ -8,7 +8,10 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
 
-    baseUrl: 'https://www.demoblaze.com/'
+    baseUrl: 'https://www.demoblaze.com/',
+    env: {
+      apiLoginUrl: 'https://api.demoblaze.com/login', // Defina sua URL aqui
+    }
   },
   watchForFileChanges: false
   // este comando salva mas não executa a interface automaticamente
