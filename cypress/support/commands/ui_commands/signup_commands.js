@@ -1,6 +1,6 @@
-const { ACESS_PAGE } = require('../page_elements/acess_page');
+const { ACESS_PAGE } = require('../../page_elements/acess_page');
 
-const HEADER_PAGE = require('../page_elements/header_page').HEADER_PAGE;
+const HEADER_PAGE = require('../../page_elements/header_page').HEADER_PAGE;
 
 Cypress.Commands.add('validarBotao', (text) => {
   cy.get(HEADER_PAGE.SIG_UP.BTN_SIGNUP)

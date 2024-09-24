@@ -1,4 +1,4 @@
-const validation_data_home = require('../fixtures/home.json');
+const validation_data_home = require('../../fixtures/home.json');
 
 describe('template spec', () => {
   beforeEach(() => {

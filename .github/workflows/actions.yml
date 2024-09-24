@@ -26,7 +26,7 @@ jobs:
 
       - name: Create cypress.env.json
         run: |
-          echo '{ "user": { "username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}" } }' > cypress.env.json
+          echo '{ "user": { "username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}", "password_hash_api": "${{ secrets.PASSWORD_HASH_API }}" } }' > cypress.env.json
 
       - name: Run Cypress tests
         run: npm run cy:run # Ajuste este comando de acordo com o script que você usa para rodar os testes

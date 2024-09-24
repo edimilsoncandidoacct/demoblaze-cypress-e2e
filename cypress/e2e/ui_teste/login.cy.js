@@ -1,6 +1,6 @@
-const validation_data_header = require('../fixtures/header.json');
-const validation_data_mensagem = require('../fixtures/mensagem.json');
-const env_data_user = require('../../cypress.env.json');
+const validation_data_header = require('../../fixtures/header.json');
+const validation_data_mensagem = require('../../fixtures/mensagem.json');
+const env_data_user = require('../../../cypress.env.json');
 
 const { faker } = require('@faker-js/faker');
 

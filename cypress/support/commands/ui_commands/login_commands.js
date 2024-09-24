@@ -1,5 +1,5 @@
-const { ACESS_PAGE } = require('../page_elements/acess_page');
-const { HEADER_PAGE } = require('../page_elements/header_page');
+const { ACESS_PAGE } = require('../../page_elements/acess_page');
+const { HEADER_PAGE } = require('../../page_elements/header_page');
 
 Cypress.Commands.add('validarBotaoLogin', (text) => {
   cy.get(ACESS_PAGE.LOGIN.BTN_LOGIN)
@@ -18,7 +18,9 @@ Cypress.Commands.add('validarLogin', (user, pass) => {
     .click() // Clica no campo para garantir o foco
     .clear() // Limpa o campo
     .type(user, { delay: 100 });
-  cy.get(ACESS_PAGE.LOGIN.INPUT_PASSWORD).should('be.visible').type(pass,{ log: false });
+  cy.get(ACESS_PAGE.LOGIN.INPUT_PASSWORD)
+    .should('be.visible')
+    .type(pass, { log: false });
   cy.get(ACESS_PAGE.LOGIN.BTN_MODAL_LOGIN).should('be.visible').click();
 });
 
@@ -52,4 +54,3 @@ Cypress.Commands.add('validarAlert', (text) => {
     expect(txt).to.contains(text);
   });
 });
-
