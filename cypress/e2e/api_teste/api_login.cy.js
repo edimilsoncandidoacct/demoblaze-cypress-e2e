@@ -8,11 +8,11 @@ const user = {
   username: faker.internet.userName(),
   password: faker.internet.password()
 };
-describe('Teste de Login API', () => {
+describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
   it('Deve fazer login com sucesso', () => {
     cy.apiLogin(
       env_data_user.user.username,
-      env_data_user.user.password_hash_api
+      env_data_user.user.password_hash_api 
     ).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.include(
