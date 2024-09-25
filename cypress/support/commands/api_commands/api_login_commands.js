@@ -8,6 +8,5 @@ Cypress.Commands.add('apiLogin', (username, password) => {
       username: username,
       password: password,
     },
-    failOnStatusCode: false, // Permite capturar respostas com erro sem falhar o teste automaticamente
   });
 });
