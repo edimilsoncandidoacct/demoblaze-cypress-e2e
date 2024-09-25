@@ -6,6 +6,7 @@
     
   },
   "sucess": {
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "msg_token": "Auth_token"
   }
 }
