@@ -1,22 +1,21 @@
 // cypress/support/commands.js
 Cypress.Commands.add('apiLogin', (username, password) => {
-  cy.request({
+  return cy.request({
     method: 'POST',
-    url: Cypress.env('apiLoginUrl'), // Acessa a URL do arquivo de config
+    url: Cypress.env('apiLoginUrl'),
     headers: {},
     body: {
       username: username,
       password: password
-    }
+    },
+    failOnStatusCode: false // Permite lidar com códigos de erro sem que o Cypress falhe automaticamente
   }).then((response) => {
-    // Verifica se o token existe no corpo da resposta
-    const token = response.body;
-      // Remove o prefixo 'Auth_token: ' se ele existir e armazena o token
-      const cleanToken = token.replace('Auth_token: ', '');
-      cy.wrap(cleanToken).as('authToken'); // Armazena o token sem o prefixo como alias
-    
+    // Retorna a resposta completa para que os testes façam suas próprias validações
+    return response;
   });
 });
+
+
 
 Cypress.Commands.add('apiLoginPlugin', (username, password) => {
   cy.api({
