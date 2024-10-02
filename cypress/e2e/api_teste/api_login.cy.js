@@ -12,7 +12,7 @@ describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
   it('Deve fazer login com sucesso', () => {
     cy.apiLogin(
       env_data_user.user.username,
-      env_data_user.user.password_hash_api 
+      env_data_user.user.password_hash_api
     ).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.include(
@@ -38,5 +38,14 @@ describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
         );
       }
     );
+  });
+  it.only('pega e define token no cookie', () => {
+    // Faz login e armazena o token
+    cy.apiLogin(env_data_user.user.username, env_data_user.user.password_hash_api);
+    // Recupera o token armazenado e define o cookie
+    cy.get('@authToken').then((token_value) => {
+      cy.setCookie('tokenp_', token_value); // Define o cookie com o nome 'tokenp_' e o valor do token
+    });
+    cy.visit('/'); 
   });
 });

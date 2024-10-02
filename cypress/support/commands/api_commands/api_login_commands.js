@@ -8,6 +8,13 @@ Cypress.Commands.add('apiLogin', (username, password) => {
       username: username,
       password: password
     }
+  }).then((response) => {
+    // Verifica se o token existe no corpo da resposta
+    const token = response.body;
+      // Remove o prefixo 'Auth_token: ' se ele existir e armazena o token
+      const cleanToken = token.replace('Auth_token: ', '');
+      cy.wrap(cleanToken).as('authToken'); // Armazena o token sem o prefixo como alias
+    
   });
 });
 
@@ -20,5 +27,5 @@ Cypress.Commands.add('apiLoginPlugin', (username, password) => {
       username: username,
       password: password
     }
-  });
+  })
 });
