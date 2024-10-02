@@ -1,4 +1,3 @@
-const validation_data_header = require('../../fixtures/header.json');
 const validation_data_mensagem = require('../../fixtures/mensagem.json');
 const env_data_user = require('../../../cypress.env.json');
 
@@ -27,7 +26,7 @@ describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
     cy.apiLogin(env_data_user.user.username, user.password).then((response) => {
       expect(response.status).to.eq(
         validation_data_mensagem.status_code.sucess
-      ); // Ou o status esperado para falha de login
+      );
       expect(response.body.errorMessage).to.eq(
         validation_data_mensagem.alert.password_incorreto
       );
@@ -39,7 +38,7 @@ describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
       (response) => {
         expect(response.status).to.eq(
           validation_data_mensagem.status_code.sucess
-        ); // Ou o status esperado para falha de login
+        );
         expect(response.body.errorMessage).to.eq(
           validation_data_mensagem.alert.user_incorreto
         );
@@ -56,8 +55,6 @@ describe('Teste de Login API', { env: { hideCredentials: true } }, () => {
       const token = response.body.replace('Auth_token: ', '');
       cy.setCookie('tokenp_', token); // Define o cookie com o nome 'tokenp_' e o valor do token
     });
-
-    // Visita a página após definir o cookie
     cy.visit('/');
   });
 });
