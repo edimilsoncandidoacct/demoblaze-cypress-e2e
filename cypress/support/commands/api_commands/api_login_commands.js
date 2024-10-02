@@ -5,18 +5,6 @@ Cypress.Commands.add('apiLogin', (username, password) => {
     url: Cypress.env('apiLoginUrl'), // Acessa a URL do arquivo de config
     headers: {},
     body: {
-
-
-
-
-
-
-
-
-
-
-
-      
       username: username,
       password: password
     }
@@ -36,20 +24,6 @@ Cypress.Commands.add('apiLoginPlugin', (username, password) => {
     url: Cypress.env('apiLoginUrl'), // Acessa a URL do arquivo de config
     headers: {},
     body: {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       username: username,
       password: password
     }
