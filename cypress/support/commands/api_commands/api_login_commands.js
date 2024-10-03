@@ -15,8 +15,6 @@ Cypress.Commands.add('apiLogin', (username, password) => {
   });
 });
 
-
-
 Cypress.Commands.add('apiLoginPlugin', (username, password) => {
   cy.api({
     method: 'POST',
