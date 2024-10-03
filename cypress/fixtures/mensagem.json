@@ -8,5 +8,8 @@
   "sucess": {
     "welcome": "Welcome",
     "msg_token": "Auth_token"
+  },
+  "status_code": {
+    "sucess": 200
   }
 }
