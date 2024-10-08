@@ -26,5 +26,4 @@ Cypress.Commands.add('validateProductTitle', (expectedTitle) => {
 Cypress.Commands.add('validateProductLink', (expectedTitle) => {
   cy.get(HOME_PAGE.TEXT_NAME_TITLE).contains(expectedTitle).click();
   cy.url().should('include', 'prod.html?idp_=');
-  cy.go('back');
 });
