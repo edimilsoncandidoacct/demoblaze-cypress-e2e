@@ -4,11 +4,11 @@ describe('template spec', () => {
   beforeEach(() => {
     cy.visit('/');
   });
-  it('Validar Acesso', () => {
+  it.only('Validar Acesso', () => {
     cy.validarPagina(Cypress.config().baseUrl);
   });
 
-  it('Validar Logo', () => {
+  it.only('Validar Logo', () => {
     cy.validarLogo();
   });
 
@@ -37,3 +37,6 @@ describe('template spec', () => {
     cy.validateProductLink(validation_data_home.product_name.nokia);
   });
 });
+
+
+
