@@ -1,6 +1,6 @@
 const validation_data_home = require('../../fixtures/home.json');
 
-describe('template spec', () => {
+describe('teste de home', () => {
   beforeEach(() => {
     cy.visit('/');
   });
