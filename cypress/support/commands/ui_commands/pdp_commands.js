@@ -24,3 +24,6 @@ Cypress.Commands.add('validarQualquerProduto', (text) => {
     .invoke('text') // Pegar o texto do elemento
     .contains(text); // Verificar se o texto contém a descrição
 });
+Cypress.Commands.add('validateBotaoAdd', (text) => {
+  cy.get(PDP_PAGE.BTN_ADD_CART).contains(text).click();
+});

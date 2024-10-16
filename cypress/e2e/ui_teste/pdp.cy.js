@@ -16,6 +16,7 @@ describe('teste de pdp', () => {
       validation_data_pdp.pdp_descricoes.titulo_descricao
     );
     cy.validarParagrafo(validation_data_pdp.pdp_descricoes.descricao);
+    cy.validateBotaoAdd(validation_data_pdp.pdp_descricoes.botao_add);
   });
 
   it.skip('Deve validar a imagem, título e descrição de qualquer produto', () => {

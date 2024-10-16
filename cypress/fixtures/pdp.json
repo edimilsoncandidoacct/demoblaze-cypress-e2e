@@ -3,7 +3,8 @@
     "name": "Nokia lumia 1520",
     "price": "$820",
     "titulo_descricao": "Product description",
-    "descricao": "The Nokia Lumia 1520 is powered by 2.2GHz quad-core Qualcomm Snapdragon 800 processor and it comes with 2GB of RAM. "
+    "descricao": "The Nokia Lumia 1520 is powered by 2.2GHz quad-core Qualcomm Snapdragon 800 processor and it comes with 2GB of RAM. ",
+    "botao_add": "Add to cart"
   },
   "pdp_produtos": {
     "link_pdp": "prod.html?idp_=",
