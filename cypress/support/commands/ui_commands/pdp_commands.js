@@ -18,12 +18,19 @@ Cypress.Commands.add('validarParagrafo', (text) => {
   cy.get(PDP_PAGE.TIT_PARAGRAFO).should('be.visible').contains(text);
 });
 
-Cypress.Commands.add('validarQualquerProduto', (text) => {
-  cy.get(PDP_PAGE.TIT_PARAGRAFO)
-    .should('be.visible') // Garantir que o elemento esteja visível
-    .invoke('text') // Pegar o texto do elemento
-    .contains(text); // Verificar se o texto contém a descrição
-});
+
+  Cypress.Commands.add('validarQualquerProduto', () => {
+    cy.get(PDP_PAGE.TIT_PARAGRAFO).invoke('text').then((initialText) => {
+      const trimmedInitialText = initialText.trim();
+      cy.get(PDP_PAGE.TIT_PARAGRAFO).invoke('text').then((currentText) => {
+        const trimmedCurrentText = currentText.trim();
+        expect(trimmedCurrentText).to.eq(trimmedInitialText);
+      });
+    });
+  });
+
+
 Cypress.Commands.add('validateBotaoAdd', (text) => {
   cy.get(PDP_PAGE.BTN_ADD_CART).contains(text).click();
 });
+

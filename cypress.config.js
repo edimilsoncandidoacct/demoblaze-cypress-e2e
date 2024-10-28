@@ -10,7 +10,7 @@ module.exports = defineConfig({
 
     baseUrl: 'https://www.demoblaze.com/',
     env: {
-      apiLoginUrl: 'https://api.demoblaze.com/login', // Defina sua URL aqui
+      apiUrl: 'https://api.demoblaze.com/', // Defina sua URL aqui
     }
   },
   watchForFileChanges: false

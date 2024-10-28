@@ -7,3 +7,4 @@ import './commands/ui_commands/pdp_commands';
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
+import './commands/api_commands/api_cart_commands';
