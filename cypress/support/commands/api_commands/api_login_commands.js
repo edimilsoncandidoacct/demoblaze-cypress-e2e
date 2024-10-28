@@ -1,8 +1,8 @@
 // cypress/support/commands.js
-Cypress.Commands.add('apiLogin', (username, password) => {
+Cypress.Commands.add('apiLogin', (url, username, password) => {
   return cy.request({
     method: 'POST',
-    url: Cypress.env('apiLoginUrl'),
+    url: url,
     headers: {},
     body: {
       username: username,
