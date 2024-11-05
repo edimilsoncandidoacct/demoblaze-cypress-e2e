@@ -29,4 +29,17 @@ describe('teste de cart', () => {
       true
     );
   });
+
+  it('validar Imagem Cart', () => {
+    cy.validarImagemCart();
+  });
+  it('validar titulo do produto no carrinho', () => {
+    cy.validarBodyProd(validation_data_cart.cart_page.tit_desc_prod_cart);
+  });
+  it('validar valor do produto no carrinho', () => {
+    cy.validarBodyProd(validation_data_cart.cart_page.valor_prod_cart);
+  });
+
+
+  
 });
