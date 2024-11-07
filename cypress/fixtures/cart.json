@@ -1,6 +1,8 @@
 {
   
   "cart_page": {
-    "link_page_cart": "cart.html"
+    "link_page_cart": "cart.html",
+    "tit_desc_prod_cart": "Nokia lumia 1520",
+    "valor_prod_cart": "820"
   }
 }

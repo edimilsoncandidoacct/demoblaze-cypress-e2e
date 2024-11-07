@@ -8,3 +8,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
 import './commands/api_commands/api_cart_commands';
+import './commands/ui_commands/cart_commands';

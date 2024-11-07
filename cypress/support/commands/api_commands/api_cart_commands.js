@@ -1,5 +1,5 @@
 // cypress/support/commands.js
-Cypress.Commands.add('addToCart', (url, id, cookie, prod_id, flag = true) => {
+Cypress.Commands.add('addToCart', (url, id, cookie, prod_id, flag) => {
   cy.request({
     method: 'POST',
     url: url,
@@ -12,7 +12,6 @@ Cypress.Commands.add('addToCart', (url, id, cookie, prod_id, flag = true) => {
     }
   }).then((response) => {
     expect(response.status).to.eq(200);
-    cy.log(JSON.stringify(response.body));
   });
 });
 
